@@ -18,7 +18,9 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(cors());
+app.use(cors({
+  origin: '*'
+}));
 
 // Routes
 app.use('/api/usuarios', require('./routes/usuarios'));
@@ -96,7 +98,7 @@ const server = app.listen(app.get('port'), () => {
 
 //Configuración de los sockets
 const io = new Server(server, {
-  origin: 'https://whealthyn.herokuapp.com/',
+  origin: '*',
   methods: ["GET","POST"]
 });
 
