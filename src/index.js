@@ -96,7 +96,8 @@ const server = app.listen(app.get('port'), () => {
 
 //Configuración de los sockets
 const io = new Server(server, {
-
+  origin: 'https://whealthyn.herokuapp.com/',
+  methods: ["GET","POST"]
 });
 
 io.on('connection', (socket) => {
