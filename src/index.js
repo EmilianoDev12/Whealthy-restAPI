@@ -19,7 +19,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors({
-  origin: '*'
+  origin: '*',
+  credentials: true,
 }));
 
 // Routes
@@ -99,6 +100,7 @@ const server = app.listen(app.get('port'), () => {
 //Configuración de los sockets
 const io = new Server(server, {
   origin: '*',
+  credentials: true,
   methods: ["GET","POST"]
 });
 
