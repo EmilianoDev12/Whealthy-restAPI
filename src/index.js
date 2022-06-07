@@ -97,6 +97,7 @@ io.on('connection', (socket) => {
   console.log(`User Connected: ${socket.id}`);
   
   socket.on('conectar',(nombre, sala) => {
+    console.log(nombre, sala);
     socket.join(sala);
   });
 
