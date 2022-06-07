@@ -88,7 +88,7 @@ const server = app.listen(app.get('port'), () => {
 //Configuración de los sockets
 const io = new Server(server, {
   cors: {
-    origin: 'https://whealthy.herokuapp.com',
+    origin: 'https://whealthyn.herokuapp.com/',
     methods: ["GET","POST"]
   }
 });
